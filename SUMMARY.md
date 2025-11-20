@@ -345,6 +345,30 @@ Add your own capabilities:
    - Build intuition, not just code
    - Educational > concise
 
+### Critical Insight: Pattern Matching vs. Understanding
+
+**IMPORTANT DISCOVERY:** The model learns patterns, NOT language understanding.
+
+**What this means:**
+- Model recognizes EXACT phrasings from training ("What is 5 + 3?")
+- Fails on different phrasings ("Add 5 and 3" → gibberish)
+- This is EXPECTED for small models trained from scratch
+- No pre-trained knowledge = no semantic understanding
+
+**Why this happens:**
+- 85M params is tiny (GPT-2 is 124M, GPT-3 is 175B)
+- Only 7,500 training examples with specific phrasings
+- Character-level tokenization makes language learning harder
+- Model memorizes patterns without understanding semantics
+
+**Educational value:**
+- Shows the difference between pattern matching and true understanding
+- Explains why modern LLMs need pre-training on massive corpora
+- Demonstrates that "instruction-following" can be just pattern matching
+- Teaches that language understanding requires scale OR pre-training
+
+**This limitation is a feature, not a bug - it teaches an important lesson about AI!**
+
 ### What We'd Do Differently
 
 1. **Model size**

@@ -268,6 +268,50 @@ Small models (50M) vs. Large models (GPT-4's ~1.8T):
 
 For general intelligence, you need scale. But for education, small is perfect.
 
+## Understanding Model Limitations: Pattern Matching vs. Language Understanding
+
+**IMPORTANT: This model learns patterns, NOT language understanding.**
+
+### What This Means
+
+The model trained from scratch on 7,500 examples will:
+
+**✅ Recognize specific phrasings from training data:**
+- "What is 5 + 3?" → Works (seen in training)
+- "Calculate 15 + 27" → Works (seen in training)
+- "Search for Python tutorials" → Works (seen in training)
+
+**❌ Fail on different phrasings:**
+- "Add 5 and 3" → Gibberish (not in training data)
+- "5 plus 3 equals what?" → Gibberish (not in training data)
+- "Compute the sum of 5 and 3" → Gibberish (not in training data)
+
+### Why This Happens
+
+**Small models trained from scratch do PATTERN MATCHING, not semantic understanding:**
+
+1. **No pre-trained knowledge** - Model starts with random weights, no English understanding
+2. **Limited training data** - Only 7,500 examples with specific phrasings
+3. **Small parameter count** - 85M params is tiny (GPT-2 is 124M, GPT-3 is 175B)
+4. **Character-level tokenization** - Makes language learning harder
+
+**The model memorizes "What is X + Y?" → "Answer: Z" without understanding what "addition" means.**
+
+### This Is Expected and Educational!
+
+This limitation teaches an important lesson:
+- Modern LLMs (GPT-4, Claude) are pre-trained on massive text corpora
+- They learn language understanding BEFORE instruction tuning
+- Small models trained from scratch can only do pattern matching
+- True language understanding requires scale OR pre-training
+
+**To get robust language understanding, you need:**
+- Pre-trained base model (LLaMA, GPT-2, etc.)
+- Billions of parameters
+- Millions of diverse training examples
+
+**This project shows HOW instruction-following works at a fundamental level, not how to match GPT-4's capabilities.**
+
 ## Inspiration
 
 - **makemore** (Karpathy) - Character-level simplicity
