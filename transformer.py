@@ -33,7 +33,7 @@ class ModelConfig:
 
     WHY THESE SIZES?
     ---------------
-    vocab_size: 91 (from our character tokenizer)
+    vocab_size: 92 (from our character tokenizer)
     max_seq_len: 512 (reasonable for conversations)
     n_layers: 12 (12-24 is standard for small models)
     n_heads: 12 (standard choice, divides evenly into d_model)
@@ -42,9 +42,9 @@ class ModelConfig:
 
     TOTAL PARAMETERS:
     ----------------
-    Embeddings: 91 × 768 = 70K
+    Embeddings: 92 × 768 = 71K
     12 Blocks × ~3.5M = 42M
-    Output: 91 × 768 = 70K
+    Output: 92 × 768 = 71K
     Total: ~50M parameters
 
     This is TINY compared to GPT-4 (~1.8T params) but perfect for learning!
@@ -52,7 +52,7 @@ class ModelConfig:
 
     def __init__(self):
         # Architecture
-        self.vocab_size = 91        # From tokenizer
+        self.vocab_size = 92        # From tokenizer (5 special + 87 chars)
         self.max_seq_len = 512      # Maximum sequence length
         self.n_layers = 12          # Number of transformer blocks
         self.n_heads = 12           # Attention heads
