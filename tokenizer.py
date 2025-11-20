@@ -77,7 +77,7 @@ class SimpleTokenizer:
 
         # Punctuation and operators
         # Critical for arithmetic and function calling!
-        regular_chars.extend(list(' .,!?:;-+*/=<>()[]{}"\'\n\t'))
+        regular_chars.extend(list(' .,!?:;-+*/=<>()[]{}"\'\n\t_'))
 
         # Combine: special tokens + regular characters
         self.vocab = special_tokens + regular_chars
